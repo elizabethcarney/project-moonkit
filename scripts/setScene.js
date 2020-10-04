@@ -24,8 +24,16 @@ spotLight.position.set(100, 100, 100);
 spotLight.castShadow = true;
 scene.add(spotLight);
 
+// sky
+var sky_sphere = new THREE.SphereGeometry( 99000, 200, 200 );
+var skyTexture = new THREE.TextureLoader().load( '../assets/img/background-sky.jpg' );
+var sky_mat = new THREE.MeshBasicMaterial({map: skyTexture, side: THREE.BackSide});
+var sky_mesh = new THREE.Mesh( sky_sphere, sky_mat );
+scene.add( sky_mesh );
+sky_mesh.position.setY(1000);
+
 // ground
-var moon_sphere = new THREE.SphereGeometry( 135, 200, 200 );
+var moon_sphere = new THREE.SphereGeometry( 300, 200, 200 );
 moon_sphere.rotateX( - Math.PI / 2 );
 var moonTexture = new THREE.TextureLoader().load( '../assets/img/moon-surface.png' );
 moonTexture.wrapS = moonTexture.wrapT = THREE.RepeatWrapping;
@@ -33,14 +41,7 @@ moonTexture.repeat.set(15, 15);
 var moon_mat = new THREE.MeshBasicMaterial({map: moonTexture, side: THREE.FrontSide});
 var moon_mesh = new THREE.Mesh( moon_sphere, moon_mat );
 scene.add( moon_mesh );
-moon_mesh.position.set(0, -20, -10);
-
-// sky
-var sky_sphere = new THREE.SphereGeometry( 99000, 200, 200 );
-var skyTexture = new THREE.TextureLoader().load( '../assets/img/background-sky.jpg' );
-var sky_mat = new THREE.MeshBasicMaterial({map: skyTexture, side: THREE.BackSide});
-var sky_mesh = new THREE.Mesh( sky_sphere, sky_mat );
-scene.add( sky_mesh );
+moon_mesh.position.set(0, -200, -5);
 
 // loaded models become instances of Object3D
 var loader = new THREE.GLTFLoader();
@@ -49,8 +50,8 @@ const onError = (errorMessage) => { console.log(errorMessage); };
 loader.load('assets/mod/moonkit-brush.glb', function (gltf) {
     brush = gltf.scene;
     brush.castShadow = true;
-    brush.scale.set(100,100,100);
-    brush.position.set(-10, 0, -20);
+    brush.scale.set(60,60,60);
+    brush.position.set(-10, 120, -10);
     scene.add(brush);
 }, onProgress, onError);
 
@@ -64,6 +65,5 @@ renderer.render(scene, camera);
 function render() {
     requestAnimationFrame(render);
     renderer.render(scene, camera);
-    moon_mesh.rotation.z += 0.0001;
 }
 render(); // if you don't repeatedly re-render it goes away :(
