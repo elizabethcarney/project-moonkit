@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Project: MoonKit</title>
     <meta name="author" content="Griffins">
@@ -15,14 +16,15 @@
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
 
-    <!-- SCRIPTS -->
-    <!--<script type="text/javascript" src="js/jquery-3.3.1.slim.js"></script>-->
 </head>
 <body>
     <div class="viewport">
 
+        <div id="backdrop-container"></div>
+
+        <!-- PANELS -->
         <div class="panel bottom-panel">
-            <p> Click "Tasks" on the left to see your task menu, or "Toolkit" on the right to explore and use your tools.</p>
+            <p> Click "Tasks" on the left to see your task menu, or "Toolkit" on the right to explore your tools.</p>
         </div>
 
         <div class="panel side-panel left-panel">
@@ -33,14 +35,22 @@
             <p> Toolkit </p>
         </div>
 
-        <div id="model-container">
+        <!-- EXAMINE TOOL MODAL -->
+        <div class="model-container">
+            <div class="model-viewport"></div>
+            <div class="model-controls-text">
+                <p>Click and drag to spin the model. Zoom with the middle mouse button or a pinch gesture on touchpad.</p>
+            </div>
         </div>
 
     </div>
 
+    <!-- SCRIPTS -->
     <script src="scripts/three.js"></script>
     <script src="https://unpkg.com/three@0.91.0/examples/js/loaders/GLTFLoader.js"></script><!-- must be loaded after three.js -->
+    <!--<script type="text/javascript" src="js/jquery-3.3.1.slim.js"></script>-->
     <script src="scripts/setScene.js"></script>
+    <script src="scripts/examineTool.js"></script>
 
 </body>
 </html>
