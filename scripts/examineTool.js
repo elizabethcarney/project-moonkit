@@ -93,7 +93,7 @@ function examineTool(type) {
     controls = new THREE.TrackballControls( mod_camera, mod_container );
     controls.rotateSpeed = 1.0;
     controls.zoomSpeed = 1.2;
-    controls.panSpeed = 0.8;
+    controls.panSpeed = 0.5;
 
     //renderer
     mod_renderer.setSize(mod_container.clientWidth, mod_container.clientHeight);
