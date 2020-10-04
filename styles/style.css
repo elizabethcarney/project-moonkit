@@ -60,7 +60,7 @@ canvas {
     font-weight: bold;
 }
 .side-panel {
-    width: 13%;
+    width: 22%;
     height: 7%;
     line-height: 100%;
     top: 30px;
@@ -71,9 +71,18 @@ canvas {
 }
 .right-panel {
     right: 15px;
+    height: 45vh;
+}
+.right-panel p {
+    font-size: 3vh;
+}
+.right-panel p:hover {
+    font-weight: bold;
+    cursor: grab;
 }
 
 .model-container {
+    display: none;
     box-sizing: border-box;
     position: absolute;
     width: 40%;
@@ -83,6 +92,16 @@ canvas {
     z-index: 100;
     border: 3px solid black;
     color: black;
+}
+.exit-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 7%;
+    z-index: 1000;
+}
+.exit-icon:hover {
+    cursor: grab;
 }
 .model-viewport {
     height: 90%;

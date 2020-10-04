@@ -23,20 +23,30 @@
         <div id="backdrop-container"></div>
 
         <!-- PANELS -->
+        <!-- console -->
         <div class="panel bottom-panel">
-            <p> Click "Tasks" on the left to see your task menu, or "Toolkit" on the right to explore your tools.</p>
+            <p> Click "Tasks" on the left to see your task menu, or explore your tools in the "Toolkit" on the right.</p>
         </div>
-
+        <!-- tasks -->
         <div class="panel side-panel left-panel">
-            <p> Tasks </p>
+            <h4> Tasks </h4>
         </div>
-
+        <!-- toolkit -->
         <div class="panel side-panel right-panel">
-            <p> Toolkit </p>
+            <h4> Toolkit </h4><hr>
+            <div class="tool_menu_item" id="scoop"><p>Small Rock Scoop</p></div>
+            <div class="tool_menu_item" id="shovel"><p>Large Rock Shovel</p></div>
+            <div class="tool_menu_item" id="brush"><p>Dust Brush</p></div>
+            <div class="tool_menu_item" id="compartment"><p>Compartment</p></div>
+            <div class="tool_menu_item" id="drill"><p>Drill</p></div>
+            <div class="tool_menu_item" id="brush"><p>Tongs</p></div>
+            <div class="tool_menu_item" id="penetrometer"><p>Penetrometer</p></div>
+            <div class="tool_menu_item" id="sampler"><p>Surface Sampler</p></div>
         </div>
 
         <!-- EXAMINE TOOL MODAL -->
         <div class="model-container">
+            <img class="exit-icon" src="assets/img/exit-icon.png"></img>
             <div class="model-viewport"></div>
             <div class="model-controls-text">
                 <p>Click and drag to spin the model. Zoom with the middle mouse button or a pinch gesture on touchpad.</p>
@@ -48,7 +58,7 @@
     <!-- SCRIPTS -->
     <script src="scripts/three.js"></script>
     <script src="https://unpkg.com/three@0.91.0/examples/js/loaders/GLTFLoader.js"></script><!-- must be loaded after three.js -->
-    <!--<script type="text/javascript" src="js/jquery-3.3.1.slim.js"></script>-->
+    <script src="scripts/jquery-3.5.1.slim.js"></script>
     <script src="scripts/setScene.js"></script>
     <script src="scripts/examineTool.js"></script>
 
