@@ -6,6 +6,10 @@
 /*         Team: Griffins         */
 /**********************************/
 
+// reuse the same renderer for each time you load a model
+// otherwise, after about 10 renders, nothing will render ever again
+var mod_renderer = new THREE.WebGLRenderer( { antialias: true } );
+
 function examineTool(type) {
 
     const mod_container = document.querySelector('.model-viewport');
@@ -17,7 +21,7 @@ function examineTool(type) {
     const mod_camera = new THREE.PerspectiveCamera(300, mod_aspect, 0.1, 5000); // fov, aspect, near_clip, far_clip
     mod_camera.position.set(0, 0, 15);
     var frustumSize = 400;
-    const ortho_camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 1, 1000 );
+    const ortho_camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 1, 5000 );
     mod_camera.position.set(0, 0, 15);
 
     // light
@@ -32,8 +36,15 @@ function examineTool(type) {
 
     // the loaded model
     var tool;
-    var tool_file = (type == 'brush') ? ('assets/mod/moonkit-brush.glb')
-              : console.log('Model not found.');
+    var tool_file = (type == 'scoop') ? ('assets/mod/moonkit-scoop.glb')
+                  : (type == 'shovel') ? ('assets/mod/moonkit-shovel.glb')
+                  : (type == 'brush') ? ('assets/mod/moonkit-brush.glb')
+                  : (type == 'compartment') ? ('assets/mod/moonkit-compartment.glb')
+                  : (type == 'drill') ? ('assets/mod/moonkit-drill.glb')
+                  : (type == 'tongs') ? ('assets/mod/')
+                  : (type == 'penetrometer') ? ('assets/mod/')
+                  : (type == 'sampler') ? ('assets/mod/')
+                  : console.log('Model not found.');
 
     // loaded models become instances of Object3D
     var loader = new THREE.GLTFLoader();
@@ -42,14 +53,45 @@ function examineTool(type) {
     loader.load(tool_file, function (gltf) {
         tool = gltf.scene;
         tool.castShadow = true;
-        tool.scale.set(40,40,40);
-        tool.position.set(0, 2, 0);
-        tool.rotation.set( Math.PI, -0.4, -0.2 );
+
+        if (type == 'scoop') {
+            tool.scale.set(13,13,13);
+            tool.position.set(0, 6, 0);
+            tool.rotation.set( Math.PI, -0.4, -0.2 );
+        } else if (type == 'shovel') {
+            tool.scale.set(3.5,3.5,3.5);
+            tool.position.set(0, 5, 0);
+            tool.rotation.set( Math.PI, -0.7, 0 );
+        } else if (type == 'brush') {
+            tool.scale.set(40,40,40);
+            tool.position.set(0, 2, 0);
+            tool.rotation.set( Math.PI, -0.4, -0.2 );
+        } else if (type == 'compartment') {
+            tool.scale.set(3,3,3);
+            tool.position.set(-2, 2, 0);
+            tool.rotation.set( Math.PI, -2, -0.5 );
+        } else if (type == 'drill') {
+            tool.scale.set(12,12,12);
+            tool.position.set(0, 2, 0);
+            tool.rotation.set( Math.PI, -0.4, -0.2 );
+        } else if (type == 'scongs') {
+            tool.scale.set(40,40,40);
+            tool.position.set(0, 2, 0);
+            tool.rotation.set( Math.PI, -0.4, -0.2 );
+        } else if (type == 'penetrometer') {
+            tool.scale.set(40,40,40);
+            tool.position.set(0, 2, 0);
+            tool.rotation.set( Math.PI, -0.4, -0.2 );
+        } else if (type == 'sampler') {
+            tool.scale.set(40,40,40);
+            tool.position.set(0, 2, 0);
+            tool.rotation.set( Math.PI, -0.4, -0.2 );
+        }
+
         mod_scene.add(tool);
     }, onProgress, onError);
 
     //renderer
-    var mod_renderer = new THREE.WebGLRenderer( { antialias: true } );
     mod_renderer.setSize(mod_container.clientWidth, mod_container.clientHeight);
     mod_renderer.setPixelRatio(window.devicePixelRatio);
     mod_container.appendChild(mod_renderer.domElement);
