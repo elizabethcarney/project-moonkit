@@ -39,8 +39,8 @@ function examineTool(type) {
                   : (type == 'brush') ? ('assets/mod/moonkit-brush.glb')
                   : (type == 'compartment') ? ('assets/mod/moonkit-compartment.glb')
                   : (type == 'drill') ? ('assets/mod/moonkit-drill.glb')
-                  : (type == 'tongs') ? ('assets/mod/')
-                  : (type == 'penetrometer') ? ('assets/mod/')
+                  : (type == 'scongs') ? ('assets/mod/')
+                  : (type == 'penetrometer') ? ('assets/mod/moonkit-penetrometer.glb')
                   : (type == 'sampler') ? ('assets/mod/')
                   : console.log('Model not found.');
 
@@ -77,9 +77,9 @@ function examineTool(type) {
             tool.position.set(0, 2, 0);
             tool.rotation.set( Math.PI, -0.4, -0.2 );
         } else if (type == 'penetrometer') {
-            tool.scale.set(40,40,40);
-            tool.position.set(0, 2, 0);
-            tool.rotation.set( Math.PI, -0.4, -0.2 );
+            tool.scale.set(20,20,20);
+            tool.position.set(0, 12, 0);
+            tool.rotation.set( Math.PI, -0.4, 0 );
         } else if (type == 'sampler') {
             tool.scale.set(40,40,40);
             tool.position.set(0, 2, 0);

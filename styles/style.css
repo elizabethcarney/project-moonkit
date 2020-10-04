@@ -44,7 +44,7 @@ canvas {
     position: absolute;
     z-index: 100;
     background-color: rgba(200,220,255, 0.7);
-    border: 1px solid darkblue;
+    border: 2px solid darkblue;
     border-radius: 7px;
     padding: 10px 20px;
     font-size: 3.2vh;
