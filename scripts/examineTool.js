@@ -55,7 +55,7 @@ function examineTool(type) {
         if (type == 'scoop') {
             tool.scale.set(13,13,13);
             tool.position.set(0, 6, 0);
-            tool.rotation.set( Math.PI, -0.4, -0.2 );
+            tool.rotation.set( Math.PI, -1, -0.2 );
         } else if (type == 'shovel') {
             tool.scale.set(3.5,3.5,3.5);
             tool.position.set(0, 5, 0);
