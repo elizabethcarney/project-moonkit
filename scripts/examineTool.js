@@ -41,7 +41,7 @@ function examineTool(type) {
                   : (type == 'drill') ? ('assets/mod/moonkit-drill.glb')
                   : (type == 'scongs') ? ('assets/mod/moonkit-scongs.glb')
                   : (type == 'penetrometer') ? ('assets/mod/moonkit-penetrometer.glb')
-                  : (type == 'sampler') ? ('assets/mod/')
+                  : (type == 'sampler') ? ('assets/mod/moonkit-sampler.glb')
                   : console.log('Model not found.');
 
     // loaded models become instances of Object3D
@@ -53,8 +53,8 @@ function examineTool(type) {
         tool.castShadow = true;
 
         if (type == 'scoop') {
-            tool.scale.set(13,13,13);
-            tool.position.set(0, 6, 0);
+            tool.scale.set(15,15,15);
+            tool.position.set(0, 7, 0);
             tool.rotation.set( Math.PI, -1, -0.2 );
         } else if (type == 'shovel') {
             tool.scale.set(3.5,3.5,3.5);
@@ -81,9 +81,9 @@ function examineTool(type) {
             tool.position.set(0, 12, 0);
             tool.rotation.set( Math.PI, -0.4, 0 );
         } else if (type == 'sampler') {
-            tool.scale.set(40,40,40);
-            tool.position.set(0, 2, 0);
-            tool.rotation.set( Math.PI, -0.4, -0.2 );
+            tool.scale.set(20,20,20);
+            tool.position.set(0, 6, 0);
+            tool.rotation.set( Math.PI, -1.9, 0 );
         }
 
         mod_scene.add(tool);
