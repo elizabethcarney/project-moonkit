@@ -53,5 +53,6 @@ bg_renderer.render(bg_scene, bg_camera);
 function render() {
     requestAnimationFrame(render);
     bg_renderer.render(bg_scene, bg_camera);
+    sky_mesh.rotation.x += 0.0001;
 }
 render(); // if you don't repeatedly re-render it goes away :(
