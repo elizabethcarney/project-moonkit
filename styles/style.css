@@ -78,6 +78,7 @@ canvas {
 }
 .right-panel p:hover {
     font-weight: bold;
+    font-size: 3.1vh;
     cursor: grab;
 }
 

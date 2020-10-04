@@ -9,6 +9,7 @@
 // reuse the same renderer for each time you load a model
 // otherwise, after about 10 renders, nothing will render ever again
 var mod_renderer = new THREE.WebGLRenderer( { antialias: true } );
+var controls;
 
 function examineTool(type) {
 
@@ -19,9 +20,6 @@ function examineTool(type) {
     // cameras
     const mod_aspect = mod_container.clientWidth / mod_container.clientHeight;
     const mod_camera = new THREE.PerspectiveCamera(300, mod_aspect, 0.1, 5000); // fov, aspect, near_clip, far_clip
-    mod_camera.position.set(0, 0, 15);
-    var frustumSize = 400;
-    const ortho_camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 1, 5000 );
     mod_camera.position.set(0, 0, 15);
 
     // light
@@ -91,6 +89,12 @@ function examineTool(type) {
         mod_scene.add(tool);
     }, onProgress, onError);
 
+    //create camera trackball controls
+    controls = new THREE.TrackballControls( mod_camera, mod_container );
+    controls.rotateSpeed = 1.0;
+    controls.zoomSpeed = 1.2;
+    controls.panSpeed = 0.8;
+
     //renderer
     mod_renderer.setSize(mod_container.clientWidth, mod_container.clientHeight);
     mod_renderer.setPixelRatio(window.devicePixelRatio);
@@ -100,6 +104,7 @@ function examineTool(type) {
     function render_mod() {
         requestAnimationFrame(render_mod);
         mod_renderer.render(mod_scene, mod_camera);
+        controls.update();
     }
     render_mod(); // if you don't repeatedly re-render it goes away :(
 
