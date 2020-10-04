@@ -70,8 +70,8 @@ function examineTool(type) {
             tool.rotation.set( Math.PI, -2, -0.5 );
         } else if (type == 'drill') {
             tool.scale.set(12,12,12);
-            tool.position.set(0, 2, 0);
-            tool.rotation.set( Math.PI, -0.4, -0.2 );
+            tool.position.set(0, 4, 0);
+            tool.rotation.set( (Math.PI - 0.6), -0.4, -0.2 );
         } else if (type == 'scongs') {
             tool.scale.set(40,40,40);
             tool.position.set(0, 2, 0);
