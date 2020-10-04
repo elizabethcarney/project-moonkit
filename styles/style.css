@@ -6,13 +6,83 @@
 /*         Team: Griffins         */
 /**********************************/
 
-body {
-    background-image: url('../assets/img/background-sky.jpg');
-    background-color: url('../assets/img/background-sky.jpg');
+/**************/
+/*    BASE    */
+/**************/
+
+html, body {
     height: 100%;
+}
+
+body, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    cursor: default;
+}
+
+canvas {
+    display: block;
+}
+
+/***************/
+/*   CLASSES   */
+/***************/
+
+.viewport {
+    height: 100%;
+    width: 100%;
+    /* background-image: url('../assets/img/background-sky.jpg');
+    background-color: url('../assets/img/background-sky.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    background-size: cover; */
 }
+
+.panel {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(200,220,255, 0.7);
+    border: 1px solid darkblue;
+    border-radius: 7px;
+    padding: 10px 20px;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 3.2vh;
+}
+.bottom-panel {
+    width: 70%;
+    height: auto;
+    bottom: 25px;
+    left: 15%;
+    text-align: left;
+    overflow: scroll;
+    color: black;
+    font-weight: bold;
+}
+.side-panel {
+    width: 13%;
+    height: 7%;
+    line-height: 100%;
+    top: 30px;
+    font-size: 4vh;
+}
+.left-panel {
+    left: 15px;
+}
+.right-panel {
+    right: 15px;
+}
+
+/*************/
+/*    IDs    */
+/*************/
+
+#model-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+/****************/
+/*  RESPONSIVE  */
+/****************/

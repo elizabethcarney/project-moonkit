@@ -3,23 +3,44 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Project: MoonKit</title>
-    <link rel="stylesheet" href="styles/style.css"/>
-    <!--<script type="text/javascript" src="js/jquery-3.3.1.slim.js"></script>-->
+    <meta name="author" content="Griffins">
+    <meta name="description" content="Virtual Planetary Exploration Toolkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="icon" href="img/icon.png" type="image/x-icon" />-->
+
+    <!-- STYLES -->
+    <link href="styles/normalize.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet"/>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+
+    <!-- SCRIPTS -->
+    <!--<script type="text/javascript" src="js/jquery-3.3.1.slim.js"></script>-->
 </head>
 <body>
+    <div class="viewport">
 
-    <div class="panel bottom-panel">
+        <div class="panel bottom-panel">
+            <p> Click and drag to look around. Click "Tasks" on the left to see your task menu, or "Toolkit" on the right to explore and use your tools.</p>
+        </div>
+
+        <div class="panel side-panel left-panel">
+            <p> Tasks </p>
+        </div>
+
+        <div class="panel side-panel right-panel">
+            <p> Toolkit </p>
+        </div>
+
+        <div id="model-container">
+        </div>
 
     </div>
 
-    <div class="panel left-panel">
-
-    </div>
-
-    <div class="panel right-panel">
-
-    </div>
+    <script src="scripts/three.js"></script>
+    <script src="https://unpkg.com/three@0.91.0/examples/js/loaders/GLTFLoader.js"></script><!-- must be loaded after three.js -->
+    <script src="scripts/setScene.js"></script>
 
 </body>
 </html>
