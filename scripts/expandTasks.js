@@ -14,7 +14,7 @@ $("document").ready(function(){
     /* when menu header is clicked, display menu items */
     $('.task-menu-header').click(function(event) {
         if (menu.html() == '') {
-            menu.html('<hr><div class="task_menu_item" id="experiment1"><p>Experiment 1</p></div><hr><div class="task_menu_item" id="experiment2"><p>Experiment 2</p></div><hr><div class="task_menu_item" id="experiment3"><p>Experiment 3</p></div><hr><div class="task_menu_item" id="experiment4"><p>Experiment 4</p></div>');
+            menu.html('<hr><div class="task_menu_item" id="experiment1"><p>Experiment 1</p></div><hr><div class="task_menu_item" id="experiment2"><p>Experiment 2</p></div><hr><div class="task_menu_item" id="experiment3"><p>Experiment 3</p></div>');
             panel.css("height", "auto");
             header.html('Tasks<i class="fas fa-chevron-up"></i>');
         } else {
@@ -93,51 +93,24 @@ $("document").ready(function(){
             $('.experiment-text.result').html('<p></p>');
             /* setup experiment 3 */
             $('.experiment-text.heading').html('<p>Experiment 3</p>');
-            $('.experiment-text.intro').html('<p></p>'); /////
+            $('.experiment-text.intro').html("<p>The moon is covered in a layer of dust. This dust is not moved naturally however, because the moon lacks the atmosphere required to create wind. The layers of dust therefore act as a time capsule and can be used to study different aspects of the moon's history. Use the correct tool to find areas where the dust is less dense.</p>");
             $('.tool_picker_option').click(function(event) {
                 tool_name = event.currentTarget.id;
-                if (tool_name == '') { /////
-                    $('.experiment-text.result').html('<p></p>'); ////
+                if (tool_name == 'penetrometer') {
+                    $('.experiment-text.result').html('<p>You did it! A penetrometer is used to determine the consistency or hardness of a substance. Use the correct tool to carefully gather the dust samples.</p>');
                     $('.tool_picker_option').click(function(event) {
                         tool_name = event.currentTarget.id;
-                        if (tool_name == '') { ////
-                            $('.experiment-text.result').html('<p></p>'); ///
+                        if (tool_name == 'sampler') {
+                            $('.experiment-text.result').html('<p>Correct. The surface sampler utilizes a mouse-trap like contraption to press down on the dust then spring the doors shut in order to collect it. Congratulations, all three objectives have been completed. When you are ready, return to the landing site to send the samples back to Earth.</p>');
                             $('.tool_picker_option').click(function(event) {
-                                $('.experiment-text.result').html('<p></p>'); ///
+                                $('.experiment-text.result').html('<p>Correct. The surface sampler utilizes a mouse-trap like contraption to press down on the dust then spring the doors shut in order to collect it. Congratulations, all three objectives have been completed. When you are ready, return to the landing site to send the samples back to Earth.</p>');
                             });
                         } else {
-                            $('.experiment-text.result').html('<p></p>'); ///
+                            $('.experiment-text.result').html('<p>Try again! Use the correct tool to carefully gather the dust samples.</p>');
                         }
                     });
                 } else {
-                    $('.experiment-text.result').html('<p></p>'); ///
-                }
-            });
-        } else if (id == 'experiment4') {
-            /* reset text fields */
-            $('.experiment-text.heading').html('<p></p>');
-            $('.experiment-text.intro').html('<p></p>');
-            $('.experiment-text.result').html('<p></p>');
-            /* setup experiment 4 */
-            $('.experiment-text.heading').html('<p>Experiment 4</p>');
-            $('.experiment-text.intro').html('<p></p>'); /////
-            $('.tool_picker_option').click(function(event) {
-                tool_name = event.currentTarget.id;
-                if (tool_name == '') { /////
-                    $('.experiment-text.result').html('<p></p>'); ////
-                    $('.tool_picker_option').click(function(event) {
-                        tool_name = event.currentTarget.id;
-                        if (tool_name == '') { ////
-                            $('.experiment-text.result').html('<p></p>'); ///
-                            $('.tool_picker_option').click(function(event) {
-                                $('.experiment-text.result').html('<p></p>'); ///
-                            });
-                        } else {
-                            $('.experiment-text.result').html('<p></p>'); ///
-                        }
-                    });
-                } else {
-                    $('.experiment-text.result').html('<p></p>'); ///
+                    $('.experiment-text.result').html('<p>Try again! Use the correct tool to find areas where the dust is less dense.</p>'); ///
                 }
             });
         }
