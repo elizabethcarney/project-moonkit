@@ -66,20 +66,30 @@ canvas {
     top: 30px;
     font-size: 4vh;
 }
-.left-panel {
-    left: 15px;
-}
-.right-panel {
-    right: 15px;
-    height: 45vh;
-}
-.right-panel p {
+.side-panel p {
     font-size: 2.7vh;
 }
-.right-panel p:hover {
+.side-panel p:hover {
     font-weight: bold;
     font-size: 2.8vh;
     cursor: grab;
+}
+
+.left-panel {
+    width: 18%;
+    left: 15px;
+}
+h4.task-menu-header:hover {
+    cursor: grab;
+}
+.collapsed-items {
+    display: block; /*change*/
+
+}
+
+.right-panel {
+    right: 15px;
+    height: 45vh;
 }
 .tool_menu_icon {
     float: left;
@@ -131,9 +141,6 @@ canvas {
 
 .fas {
     float: right;
-}
-.fas:hover {
-    cursor: grab;
 }
 
 /*************/
