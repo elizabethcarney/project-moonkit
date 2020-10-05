@@ -60,6 +60,11 @@ $("document").ready(function(){
                 }
             });
         } else if (id == 'experiment2') {
+            /* reset text fields */
+            $('.experiment-text.heading').html('<p></p>');
+            $('.experiment-text.intro').html('<p></p>');
+            $('.experiment-text.result').html('<p></p>');
+            /* setup experiment 2 */
             $('.experiment-text.heading').html('<p>Experiment 2</p>');
             $('.experiment-text.intro').html('<p>Your task at this site is to collect smaller samples of finer sediment and clean them so that they may be properly analyzed. Use the correct tool to scoop up the finer sediment and place it in your palm.</p>');
             $('.tool_picker_option').click(function(event) {
@@ -82,6 +87,11 @@ $("document").ready(function(){
                 }
             });
         } else if (id == 'experiment3') {
+            /* reset text fields */
+            $('.experiment-text.heading').html('<p></p>');
+            $('.experiment-text.intro').html('<p></p>');
+            $('.experiment-text.result').html('<p></p>');
+            /* setup experiment 3 */
             $('.experiment-text.heading').html('<p>Experiment 3</p>');
             $('.experiment-text.intro').html('<p></p>'); /////
             $('.tool_picker_option').click(function(event) {
@@ -104,6 +114,11 @@ $("document").ready(function(){
                 }
             });
         } else if (id == 'experiment4') {
+            /* reset text fields */
+            $('.experiment-text.heading').html('<p></p>');
+            $('.experiment-text.intro').html('<p></p>');
+            $('.experiment-text.result').html('<p></p>');
+            /* setup experiment 4 */
             $('.experiment-text.heading').html('<p>Experiment 4</p>');
             $('.experiment-text.intro').html('<p></p>'); /////
             $('.tool_picker_option').click(function(event) {
