@@ -46,10 +46,10 @@ $("document").ready(function(){
                     $('.experiment-text.result').html('<p>Yes, the drill is used to separate sediment or gain access to deeper layers in the rock. Now that the rock has been dislodged, select the correct tool to scoop it up and place it in the sample container.</p>');
                     $('.tool_picker_option').click(function(event) {
                         tool_name = event.currentTarget.id;
-                        if (tool_name == 'shovel') {
-                            $('.experiment-text.result').html('<p>A shovel is used to transport larger samples into the container. Congratulations, you have completed the first objective! When you are ready to continue, move to the next site.</p>');
+                        if (tool_name == 'scoop') {
+                            $('.experiment-text.result').html('<p>A scoop is used to transport larger samples into the container. Congratulations, you have completed the first objective! When you are ready to continue, move to the next site.</p>');
                             $('.tool_picker_option').click(function(event) {
-                                $('.experiment-text.result').html('<p>A shovel is used to transport larger samples into the container. Congratulations, you have completed the first objective! When you are ready to continue, move to the next site.</p>');
+                                $('.experiment-text.result').html('<p>A scoop is used to transport larger samples into the container. Congratulations, you have completed the first objective! When you are ready to continue, move to the next site.</p>');
                             });
                         } else {
                             $('.experiment-text.result').html('<p>Try again! Now that the rock has been dislodged, select the correct tool to scoop it up and place it in the sample container.</p>');
